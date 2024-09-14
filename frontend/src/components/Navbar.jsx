@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className='container'>
         <Link to="/">
           <h2>Study Partner</h2>
-          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-By Sandeep Rishi</h4>
+          <h4 className='sub-title'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-By Sandeep Rishi</h4>
         </Link>
         <nav>
           {user && (
