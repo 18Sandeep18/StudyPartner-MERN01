@@ -417,6 +417,7 @@ nav button:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
   }
 
   .task-details {
