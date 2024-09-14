@@ -1,47 +1,45 @@
-const express = require('express')
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
 
-const mongoose = require('mongoose')
-
-const router = express.Router();
+const taskRoutes = require('./routes/tasks');
+const userRoutes = require('./routes/user');
 
 const app = express();
-const cors = require('cors');
-app.use(cors());
-//for more security when we push our codes for deployment - 'dotenv'file will 
-// add to gitignore which will be hidden
-require('dotenv').config()
-const taskRoutes = require('./routes/tasks')
-const userRoutes = require('./routes/user')
 
+// CORS configuration for specific origin
+const allowedOrigins = ['https://study-partner-mern-01.vercel.app'];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
-//middleware
+// Middleware to parse JSON
+app.use(express.json());
 
-app.use(express.json())
+// Log requests
 app.use((req, res, next) => {
-    console.log(req.path, req.method)
-    next()
-})
+  console.log(`${req.method} request to ${req.path}`);
+  next();
+});
 
-//routes
+// Routes
+app.use('/api/tasks', taskRoutes);
+app.use('/api/user', userRoutes);
 
-app.use('/api/tasks', taskRoutes)
-app.use('/api/user', userRoutes)
-
-
-
-
-
+// Database connection and server start
 mongoose.connect(process.env.MONG_URI)
-    .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log(`Connected to Db,server is listening to port ${process.env.PORT}`)
-        })
-    })
-    .catch((Err) => {
-        console.log(Err);
-    })
-
-
-// let's start out server...which is running on localhost 8080
-
-// i'm using nodemon -> it will automatically restarts the server when new changes occurred
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Connected to DB, server is listening on port ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error connecting to the database:', err);
+  });
