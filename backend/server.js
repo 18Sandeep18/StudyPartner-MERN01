@@ -1,6 +1,9 @@
 const express = require('express')
 
 const mongoose = require('mongoose')
+
+const router = express.Router();
+
 //for more security when we push our codes for deployment - 'dotenv'file will 
 // add to gitignore which will be hidden
 require('dotenv').config()
@@ -24,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use('/api/tasks', taskRoutes)
 app.use('/api/user', userRoutes)
+
 
 
 
