@@ -368,11 +368,11 @@ nav button:hover {
     font-size: 0.9em;
   }
 
-  .create button {
-    padding: 10px;
-    font-size: 
-/* Continue CSS for mobile devices */
-  }
+  /* Continue CSS for mobile devices */
+.create button {
+  padding: 10px;
+  font-size: 0.9em;
+}
 
 .edit-modal {
   width: 90%;
