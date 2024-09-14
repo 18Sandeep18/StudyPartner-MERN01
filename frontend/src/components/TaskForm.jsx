@@ -25,7 +25,7 @@ const TaskForm = () => {
         }
 
         const task = { title, priority, timereq, due }
-        const response = await fetch('/api/tasks/', {
+        const response = await fetch('https://studypartner-mern01.onrender.com/api/tasks/', {
             method: 'POST',
             body: JSON.stringify(task),
             headers: {

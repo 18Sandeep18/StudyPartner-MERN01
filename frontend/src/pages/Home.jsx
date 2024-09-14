@@ -17,7 +17,7 @@ const Home = () => {
     //useEffect fires a fucntion when the component is rended
     useEffect(() => {
         const fetchTasks = async () => {
-            const response = await fetch('/api/tasks', {
+            const response = await fetch('https://studypartner-mern01.onrender.com/api/tasks', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

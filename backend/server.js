@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 
 //routes
 
-app.use('/api/tasks', taskRoutes)
-app.use('/api/user', userRoutes)
+app.use('https://studypartner-mern01.onrender.com/api/tasks', taskRoutes)
+app.use('https://studypartner-mern01.onrender.com/api/user', userRoutes)
 
 
 
