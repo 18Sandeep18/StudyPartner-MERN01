@@ -385,11 +385,105 @@ nav button:hover {
   color: var(--text-primary);
   padding: 8px 16px;
   font-size: 0.9em;
-  border-radius: 5px;
+  border-radius: 51px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #do-now:hover {
   background-color: var(--accent);
+}
+
+/* Responsive for Mobile Devices */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header a h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .home {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tasks {
+    grid-template-columns: 1fr;
+  }
+
+  .task-details {
+    padding: 15px;
+    height: auto;
+  }
+
+  .task-details h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .task-details p {
+    font-size: 0.9em;
+  }
+
+  #delete, #edit {
+    font-size: 0.7em;
+    padding: 3px 6px;
+    top: 15px;
+  }
+
+  #edit {
+    right: 70px;
+  }
+
+  #delete {
+    right: 15px;
+  }
+
+  .create {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .create h3 {
+    font-size: 1.2em;
+  }
+
+  .create input,
+  .create select,
+  .create textarea {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .create button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .edit-modal {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .edit-modal form {
+    gap: 10px;
+  }
+
+  .edit-modal input {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .edit-modal button {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .edit-modal button + button {
+    margin-top: 8px;
+  }
 }
