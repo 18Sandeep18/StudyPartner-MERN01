@@ -14,11 +14,11 @@ const Navbar = () => {
       <div className='container'>
         <Link to="/">
           <h2>Study Partner</h2>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-By Sandeep Rishi</h4>
         </Link>
         <nav>
           {user && (
             <div>
-              <h1>{user.name}</h1>
               <span>{user.email}&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <button onClick={handleCick}>Log Out</button>
             </div>
