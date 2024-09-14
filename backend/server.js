@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const router = express.Router();
+const cors = require('cors');
 
 //for more security when we push our codes for deployment - 'dotenv'file will 
 // add to gitignore which will be hidden
@@ -10,7 +11,12 @@ require('dotenv').config()
 const app = express();
 const taskRoutes = require('./routes/tasks')
 const userRoutes = require('./routes/user')
-
+app.use(cors({
+    origin: 'https://study-partner-mern-01.vercel.app', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  }));
+  
 
 //listening for requests
 
@@ -27,6 +33,7 @@ app.use((req, res, next) => {
 
 app.use('https://studypartner-mern01.onrender.com/api/tasks', taskRoutes)
 app.use('https://studypartner-mern01.onrender.com/api/user', userRoutes)
+
 
 
 
