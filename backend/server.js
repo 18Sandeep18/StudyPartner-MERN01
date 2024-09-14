@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 // CORS configuration for specific origin
-const allowedOrigins = ['https://study-partner-mern-01.vercel.app'];
+const allowedOrigins = ['https://studypartner-sandeep-mern.vercel.app/'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
