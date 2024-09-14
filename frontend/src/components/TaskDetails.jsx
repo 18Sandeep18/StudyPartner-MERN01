@@ -14,7 +14,7 @@ const TaskDetails = ({ task }) => {
     const handleClick = async () => {
         const confirmed = window.confirm('Are you sure you want to delete this task?');
         if (confirmed) {
-            const response = await fetch('api/tasks/' + task._id, {
+            const response = await fetch('https://studypartner-mern01.onrender.com/api/tasks/' + task._id, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,
@@ -34,7 +34,7 @@ const TaskDetails = ({ task }) => {
     };
 
     const handleEdit = async (e) => {
-        const response = await fetch('api/tasks/' + task._id, {
+        const response = await fetch('https://studypartner-mern01.onrender.com/api/tasks/' + task._id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
