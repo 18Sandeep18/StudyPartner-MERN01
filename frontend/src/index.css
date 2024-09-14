@@ -396,7 +396,9 @@ nav button:hover {
 
 /* Responsive for Mobile Devices */
 @media (max-width: 768px) {
+  /* Navbar styling */
   header .container {
+    width: 100%; /* Full width */
     flex-direction: column;
     align-items: center;
   }
@@ -406,18 +408,25 @@ nav button:hover {
     margin-bottom: 10px;
   }
 
+  /* Home container styling */
   .home {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center child elements */
     gap: 20px;
+  }
+
+  /* Center and set width for TaskForm and Tasks */
+  .tasks,
+  .create {
+    width: 80%; /* Occupy 80% of the screen width */
   }
 
   .tasks {
     order: 1;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column */
     gap: 10px;
-    width: 100%;
   }
 
   .task-details {
@@ -434,7 +443,8 @@ nav button:hover {
     font-size: 0.9em;
   }
 
-  #delete, #edit {
+  #delete,
+  #edit {
     font-size: 0.7em;
     padding: 3px 6px;
     top: 15px;
@@ -449,7 +459,6 @@ nav button:hover {
   }
 
   .create {
-    width: 100%;
     padding: 15px;
   }
 
@@ -492,3 +501,4 @@ nav button:hover {
     margin-top: 8px;
   }
 }
+
