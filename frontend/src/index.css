@@ -407,12 +407,15 @@ nav button:hover {
   }
 
   .home {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
 
   .tasks {
-    grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .task-details {
