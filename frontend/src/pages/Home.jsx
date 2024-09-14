@@ -41,7 +41,6 @@ const Home = () => {
 
     return (
         <div className='home'>
-                <TaskForm />
             <div className="tasks">
 
                 {tasks && tasks.length > 0 ? (
@@ -55,6 +54,7 @@ const Home = () => {
 
 
             </div>
+                <TaskForm />
         </div>
     )
 }
