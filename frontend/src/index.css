@@ -294,7 +294,7 @@ nav button:hover {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;  /* Below the modal */
 }
-
+/* 
 @media (max-width: 768px) {
   .create, .edit-modal {
     width: 100%;
@@ -311,7 +311,7 @@ nav button:hover {
   .create textarea {
     width: 100%;
   }
-}/* Priority Dropdown in Edit Modal */
+}Priority Dropdown in Edit Modal */
 .edit-modal select {
   padding: 10px;
   font-size: 1em;
