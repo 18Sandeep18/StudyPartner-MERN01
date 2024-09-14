@@ -1,0 +1,95 @@
+/* Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=VT323&display=swap');
+
+/* Color Scheme */
+:root {
+  --primary: #1a83ac;
+  --secondary: #f4a261;
+  --error: #e76f51;
+  --background: #121212;
+  --card-bg: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent: #e9c46a;
+}
+
+/* General Layout */
+body {
+  background: var(--background);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+}
+
+/* Login and Signup Containers */
+.login-container,
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: var(--background);
+}
+
+.login-form,
+.signup-form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2,
+.signup-form h2 {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.login-form input,
+.signup-form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--text-secondary);
+  border-radius: 4px;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.login-form button,
+.signup-form button {
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+  background-color: var(--accent);
+}
+
+.login-form p,
+.signup-form p {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.login-form a,
+.signup-form a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.login-form a:hover,
+.signup-form a:hover {
+  text-decoration: underline;
+}
+

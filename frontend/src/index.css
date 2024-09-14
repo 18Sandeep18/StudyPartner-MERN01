@@ -1,0 +1,395 @@
+/* Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=VT323&display=swap');
+
+/* Color Scheme */
+:root {
+  --primary: #1a83ac;
+  --secondary: #f4a261;
+  --error: #e76f51;
+  --background: #121212;
+  --card-bg: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent: #e9c46a;
+}
+
+/* General Layout */
+body {
+  background: var(--background);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+}
+
+/* Header */
+header {
+  background: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+header a h2 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+}
+
+nav button {
+  background-color: var(--error);
+  border: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+nav button:hover {
+  background-color: var(--accent);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Home-section styles */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+}
+
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+/* Task Details Card */
+.task-details {
+  background: var(--card-bg);
+  height: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-details:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.task-details h4 {
+  font-size: 1.3em;
+  color: var(--accent);
+  margin: 0;
+  width: 60%;
+  margin-bottom: 20%;
+  height: 10%;
+  white-space: normal;  /* Allow wrapping */
+  overflow: visible;  /* Ensure no text is hidden */
+  text-overflow: clip;  /* Disable text clipping */
+  word-wrap: break-word;  /* Break long words */
+}
+
+.task-details p {
+  font-size: 1em;
+  color: var(--text-secondary);
+}
+
+/* Task Action Buttons */
+#delete, #edit {
+  position: absolute;
+  top: 20px;
+  padding: 5px 5px;  /* Reduced padding */
+  border: none;
+  color: var(--text-primary);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.9em;  /* Adjust font size if needed */
+}
+
+#delete {
+  right: 20px;
+  background: var(--error);
+}
+
+#edit {
+  right: 100px;
+  background: var(--secondary);
+}
+
+#delete:hover, #edit:hover {
+  transform: translateY(-2px);
+}
+
+.high-priority {
+  border: 2px solid var(--error);
+}
+
+.high-priority h4 {
+  color: var(--error);
+}
+
+/* Task Form */
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  background-color: var(--card-bg);
+}
+
+.create h3 {
+  margin: 0 0 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--accent);
+}
+
+.create label {
+  display: inline-block;
+  font-size: 1em;
+  color: var(--text-secondary);
+}
+
+.create input,
+.create select,
+.create textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid var(--text-secondary);
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.create textarea {
+  height: 100px;
+  resize: none;
+}
+
+.create button {
+  padding: 12px 20px;
+  font-size: 1em;
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create button:hover {
+  background-color: var(--accent);
+}
+
+.create .error {
+  color: var(--error);
+  font-size: 1em;
+  margin-top: 5px;
+  border: 1px solid var(--error);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(231, 111, 81, 0.2);
+  text-align: center;
+}
+
+/* Edit Modal */
+.edit-modal {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.edit-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-modal label {
+  font-size: 1em;
+  color: var(--text-secondary);
+}
+
+.edit-modal input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid var(--text-secondary);
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.edit-modal button {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-modal button[type="button"] {
+  background-color: var(--secondary);
+}
+
+.edit-modal button[type="button"]:hover {
+  background-color: var(--error);
+}
+
+.edit-modal button:hover {
+  background-color: var(--accent);
+}
+
+.edit-modal button + button {
+  margin-top: 10px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;  /* Below the modal */
+}
+
+@media (max-width: 768px) {
+  .create, .edit-modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .create label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .create input,
+  .create select,
+  .create textarea {
+    width: 100%;
+  }
+}/* Priority Dropdown in Edit Modal */
+.edit-modal select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid var(--text-secondary);
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-modal select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+
+
+/* ilushdflajhfla gh kfjghsighsel gjshdfgkjshdgbldfg ldsfjgilehg */
+
+
+/* Task Details Card */
+.task-details {
+  background: var(--card-bg);
+  height: 250px;
+  border-radius: 10px;
+  /* padding: 20px; */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-details p {
+  font-size: 0.9em;  /* Reduce the font size */
+  color: var(--text-secondary);
+  margin: 5px 0;  /* Reduce the margin between paragraphs */
+}
+
+/* Task Action Buttons */
+#delete, #edit {
+  position: absolute;
+  top: 10px;  /* Move buttons closer to the top */
+  padding: 3px 8px;  /* Reduced padding */
+  border: none;
+  color: var(--text-primary);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.8em;  /* Adjust font size for smaller buttons */
+}
+
+#delete {
+  right: 10px;  /* Move closer to the right corner */
+  background: var(--error);
+}
+
+#edit {
+  right: 50px;  /* Reduce space between edit and delete buttons */
+  background: var(--secondary);
+}
+
+#delete:hover, #edit:hover {
+  transform: translateY(-2px);
+}
+
+#do-now {
+  background-color: var(--primary);
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 16px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#do-now:hover {
+  background-color: var(--accent);
+}
