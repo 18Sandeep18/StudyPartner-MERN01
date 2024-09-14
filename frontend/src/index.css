@@ -392,4 +392,13 @@ nav button:hover {
 .modal-overlay {
   background: rgba(0, 0, 0, 0.6);
 }
+}.high-priority {
+  border: 2px solid #e76f51; /* Red border for high priority */
+  border-radius: 10px;
+  padding: 10px; /* Ensure padding to avoid content being too close to the border */
+}
+
+/* Optional: Add a subtle background change for high-priority tasks */
+.high-priority {
+  background: rgba(231, 111, 81, 0.1); /* Light red background for better visibility */
 }
